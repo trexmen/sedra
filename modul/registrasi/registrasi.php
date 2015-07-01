@@ -11,13 +11,13 @@ switch($_GET['tipe'])
 				<div class='header_box'>
 					<h2>Form Pendaftaran Guru</h2>
 				</div>
-				<form method='post' action='$aksi?tipe=guru' style='padding:15px'>
+				<form method='post' action='$aksi?tipe=guru' style='padding:15px' enctype='multipart/form-data'>
 					<input type='hidden' name='tipe' value='$_GET[tipe]'>
 					<table>
 					<tbody>
 					<tr>
 						<td>
-							<b>Username</b>
+							<b>Username*</b>
 						</td>
 						<td>:</td>
 						<td>
@@ -25,7 +25,7 @@ switch($_GET['tipe'])
 					</tr>
 					<tr>
 						<td>
-							<b>Password</b>
+							<b>Password*</b>
 						</td>
 						<td>:</td>
 						<td>
@@ -34,7 +34,7 @@ switch($_GET['tipe'])
 					</tr>
 					<tr>
 						<td>
-							<b>Ulangi Password</b>
+							<b>Ulangi Password*</b>
 						</td>
 						<td>:</td>
 						<td>
@@ -43,7 +43,7 @@ switch($_GET['tipe'])
 					</tr>
 					<tr>
 						<td>
-							<b>NIP</b>
+							<b>NIP*</b>
 						</td>
 						<td>:</td>
 						<td>
@@ -51,11 +51,20 @@ switch($_GET['tipe'])
 					</tr>
 					<tr>
 						<td>
-							<b>Nama</b>
+							<b>Nama*</b>
 						</td>
 						<td>:</td>
 						<td>
 							<input name='nama' style='width:250px' type='text' class='cariInput' required></td>
+					</tr>
+					<tr>
+						<td>
+							<b>Tempat Tanggal Lahir*</b>
+						</td>
+						<td>:</td>
+						<td>
+							<input name='tempat' style='width:150px' type='text' class='cariInput'>,<input name='tanggal_lahir' style='width:250px' type='date' class='cariInput'>
+						</td>
 					</tr>
 					<tr>
 						<td>
@@ -83,7 +92,17 @@ switch($_GET['tipe'])
 						</td>
 						<td>:</td>
 						<td>
-							<input name='email' style='width:250px' type='text' class='cariInput'></td>
+							<input name='email' style='width:250px' type='text' class='cariInput'>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<b>Foto</b>
+						</td>
+						<td>:</td>
+						<td>
+							<input name='fupload' style='width:250px' type='file' required>
+						</td>
 					</tr>					
 					<tr>
 						<td>&nbsp;</td>
@@ -105,13 +124,13 @@ switch($_GET['tipe'])
 				<div class='header_box'>
 					<h2>Form Pendaftaran Siswa</h2>
 				</div>
-				<form method='post' action='$aksi?tipe=siswa' style='padding:15px'>
+				<form method='post' action='$aksi?tipe=siswa' style='padding:15px' enctype='multipart/form-data'>
 					<input type='hidden' name='tipe' value='$_GET[tipe]'>
 					<table>
 					<tbody>
 					<tr>
 						<td>
-							<b>Username</b>
+							<b>Username*</b>
 						</td>
 						<td>:</td>
 						<td>
@@ -119,7 +138,7 @@ switch($_GET['tipe'])
 					</tr>
 					<tr>
 						<td>
-							<b>Password</b>
+							<b>Password*</b>
 						</td>
 						<td>:</td>
 						<td>
@@ -128,7 +147,7 @@ switch($_GET['tipe'])
 					</tr>
 					<tr>
 						<td>
-							<b>Ulangi Password</b>
+							<b>Ulangi Password*</b>
 						</td>
 						<td>:</td>
 						<td>
@@ -137,7 +156,7 @@ switch($_GET['tipe'])
 					</tr>
 					<tr>
 						<td>
-							<b>NIS</b>
+							<b>NIS*</b>
 						</td>
 						<td>:</td>
 						<td>
@@ -146,11 +165,20 @@ switch($_GET['tipe'])
 					</tr>
 					<tr>
 						<td>
-							<b>Nama</b>
+							<b>Nama*</b>
 						</td>
 						<td>:</td>
 						<td>
 							<input name='nama' style='width:250px' type='text' class='cariInput' required>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<b>Tempat Tanggal Lahir*</b>
+						</td>
+						<td>:</td>
+						<td>
+							<input name='tempat' style='width:150px' type='text' class='cariInput'>,<input name='tanggal_lahir' style='width:250px' type='date' class='cariInput'>
 						</td>
 					</tr>
 					<tr>
@@ -189,6 +217,15 @@ switch($_GET['tipe'])
 						<td>:</td>
 						<td>
 							<input name='email' style='width:250px' type='text' class='cariInput'></td>
+					</tr>
+					<tr>
+						<td>
+							<b>Foto</b>
+						</td>
+						<td>:</td>
+						<td>
+							<input name='fupload' style='width:250px' type='file' required>
+						</td>
 					</tr>					
 					<tr>
 						<td>&nbsp;</td>

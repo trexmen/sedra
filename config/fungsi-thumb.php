@@ -1,8 +1,12 @@
 <?php
 // Upload gambar untuk berita
-function UploadImage($fupload_name){
+function UploadImage($fupload_name,$tipe){
   //direktori gambar
-  $vdir_upload = "../../../foto_berita/";
+  if($tipe=='siswa'){
+    $vdir_upload = "../../foto_siswa/";
+  }elseif($tipe=='guru'){
+    $vdir_upload = "../../foto_guru/";
+  }
   $vfile_upload = $vdir_upload . $fupload_name;
 
   //Simpan gambar dalam ukuran sebenarnya
