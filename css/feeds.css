@@ -1,0 +1,127 @@
+/*** MAIN STYLE ***/
+.clears{
+	clear:both;
+	line-height:0px;
+	height:0px;
+	overflow:hidden;
+}
+/*** CITATION ***/
+.citation_summary{
+	font-size			: 10px;
+	color					: #666;
+}
+.citation_navigation{
+	padding				: 10px;
+	padding-left	: 30px;
+	font-size			: 10px;
+	background		: #444 url('list/navi.png') no-repeat 8px 12px;
+	line-height		: 18px;
+	color					: #999;
+	font-family		: arial,tahoma,sans-serif;
+}
+.citation_navigation a,.citation_navigation a:visited{
+	color					: #ffd;
+}
+.citation_navigation a:hover{
+	color					: #dfd;
+}
+.citation_navigation span{
+	padding-left	: 5px;
+	padding-right	: 5px;
+}
+.citation_navigation b{
+	font-weight		: normal;
+	color					: #fff;
+}
+.citation_view{
+	font-size			: 12px;
+}
+.citation_abstract{
+	font-style		: italic;
+	color					: #444;
+}
+.citation_pdf_url,
+.citation_url{
+	font-size			: 10px;
+}
+.citation_date{
+	color					: #060;
+}
+.citation_title{
+	font-weight		: bold;
+}
+.citation_author{
+	color					: #850;
+}
+
+/*** CITATION CUSTOM ***/
+.citation_main_categories{
+	width					: 100%;
+}
+.citation_main_categories td{
+	vertical-align: top;
+	width					: 50%;
+}
+.citation_category{
+	clear					: both;
+	font-weight 	: normal;
+	font-size			: 14px;
+
+	margin				: 0;
+	padding				: 5px;
+	border-bottom	: 1px solid #aaa;
+	border-top		: 1px solid #ccc;
+	margin-bottom	: 5px;
+	background		: #f5f5f5;
+}
+.citation_folder_list{
+	padding-left			: 40px;
+	list-style-image	: url("list/folder.png");
+	font-size					: 11px;
+}
+.citation_folder_list li{
+	padding-bottom: 5px;
+	padding-top		: 5px;
+	border-bottom	: 1px solid #ccc;
+}
+.citation_folder_list li.citation_parent{
+	list-style-image	: url("list/back.png");
+}
+.citation_folder_list li.citation_others{
+	list-style-image	: url("list/other.png");
+	margin-left				: 20px;
+	border-bottom			: none;
+}
+.citation_folder_list li.citation_item{
+	list-style-image	: url("list/item.png");
+	margin-left				: 20px;
+}
+.citation_folder_list li.citation_item_others{
+	list-style-image	: url("list/other.png");
+	margin-left				: 40px;
+	border-bottom			: none;
+}
+.citation_folder_list li a.citation_folder{
+	display:block;
+}
+.citation_folder_list li span.citation_volume{
+	display			: block;
+	float				: right;
+	font-size		: 10px;
+	color				: #fff;
+	background-color	: #060;
+	padding			: 4px;
+	line-height	: 10px;
+	margin-top	: -2px;
+}
+.citation_folder_list li span.citation_volume{
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	
+	background-image:-moz-linear-gradient(top,#449944,#005500);
+	background-image:-webkit-gradient(linear,left top,left bottom,from(#449944),to(#005500));
+	filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#449944,endColorStr=#005500);
+	
+	text-shadow: 1px 1px 1px #000;
+}

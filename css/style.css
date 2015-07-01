@@ -1,0 +1,437 @@
+body{
+	cursor:default;
+	background:#555555;
+	margin:0;
+	padding:0;
+	font-family:arial,verdana,tahoma,sans;
+	font-size:12px;
+}
+#main_root{
+	 background:url('../images/bg_top.png') repeat-x top left;
+}
+td{
+	font-size:12px
+}
+form{
+	margin:0;
+	padding:0;
+}
+
+/* TEMPLATE */
+.box_menu_kiri a, .box_menu_kiri a:visited{
+	display:block;
+	line-height:30px;
+	border-bottom:1px solid #cccccc;
+	border-top:1px solid #ffffff;
+	text-decoration:none;
+	padding-left:5px;
+	color:#444444;
+}
+.box_menu_kiri a:hover{
+	text-decoration:none;
+	background:#444444;
+	color:#ffffff;
+}
+#main_kuliahonline{
+	margin:auto;
+	width:980px;
+}
+/*#main_page_header{
+	height:98px;
+	background:url('../images/logo_smkn2subang.png') no-repeat right 0px;
+}*/
+#main_page_header_logo{
+	height:58px;
+	background:url('../images/logo1.png') no-repeat left 5px;
+}
+#main_top_mainmenu{
+	height:40px;
+}
+#main_top_mainmenu a, #main_top_mainmenu a:visited{
+	text-decoration:none;
+	display:block;
+	float:left;
+	margin-right:2px;
+	background:transparent url('../images/home.png') no-repeat 4px 5px;
+	color:#444444;
+	margin-top:3px;
+	padding:10px;
+	padding-bottom:9px;
+	padding-left:35px;
+	padding-right:8px;
+	font-size:12px;
+	font-weight:bold;
+	border-right:1px dotted #bbbbbb;
+}
+#main_top_mainmenu a:hover{
+	text-decoration:none;
+	color:#ffffff;
+	background-color:#444444;
+}
+#main_top_mainmenu a.menu_listmhs{
+	background-image:url('../images/listmhs.png');
+}
+#main_top_mainmenu a.menu_listdosen{
+	background-image:url('../images/dosen.png');
+}
+#main_top_mainmenu a.menu_informasi{
+	background-image:url('../images/materi.png');
+}
+#main_top_tgl{
+	float:left;
+	margin-top:5px;
+	padding:8px;
+	padding-left:15px;
+	padding-right:15px;
+	font-size:11px;
+	color:#888888;
+}
+#main_footer{
+	clear:both;
+	padding:10px;
+	text-align:center;
+	font-size:11px;
+	margin-top:5px;
+	border-top:1px solid #cccccc;
+	background:#f8f8f8;
+}
+#main_footer .logouc,#main_footer .logouc:hover, #main_footer .logouc:visited{
+	display:block;
+	width:100px;
+	height:19px;
+	margin:auto;
+	background:url('gambar/logouc.jpg') no-repeat top left;
+}
+
+
+.tab1		{ cursor:pointer;font-size:12px;text-align:center;width:90px;font-weight:bold;font-family:arial,verdana,tahoma,sans;color:#777785 }
+.tab3		{ cursor:pointer; }
+.tab2		{ background:url('./gambar/top4.gif') repeat-x top left }
+.tabel1		{ margin-bottom:2px;background:url('./gambar/titleblue2.gif') repeat-x top left;border:1px solid #aaaab5;width:100%;}
+.tabelTitle1	{ background:url('./gambar/titleblue1.gif') no-repeat top left }
+.tabelTitle2	{ background:url('./gambar/titleorange1.gif') no-repeat top left }
+.tabelTitle3	{ background:url('./gambar/titlehijau1.gif') no-repeat top left }
+.tabel3		{ padding-left:20px;font-weight:bold;height:24px; }
+.tabel41	{ padding:2px;background:url('./gambar/bg1.gif') no-repeat right bottom #ffffff}
+.tabel42	{ padding:2px;background:url('./gambar/bg2.gif') no-repeat right bottom #ffffff}
+.tabel43	{ padding:2px;background:url('./gambar/bg3.gif') no-repeat right bottom #ffffff}
+
+.cariInput	{
+	border:1px solid #aaaaaa;
+	background:#f5f5f5;
+	color:#555565;
+	font-family:arial,verdana,tahoma,sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	line-height:14px;
+	padding:4px;
+}
+.cariInput:focus{
+	border:1px solid #006600;
+	background:#ffffff;
+}
+A 		{ COLOR: #114466; TEXT-DECORATION: none;}
+A:visited 	{ COLOR: #114466; TEXT-DECORATION: none}
+A:hover 	{ COLOR: #0066cc;  TEXT-DECORATION: underline}
+.innerModul	{ width:100%;vertical-align:top;padding:5px;background:url('./gambar/bg4.jpg') no-repeat bottom right #ffffff;border:1px solid #aaaab5;border-right:2px solid #aaaab5;border-bottom:2px solid #aaaab5; }
+.innerModul2	{ width:100%;vertical-align:top;padding:5px;border:1px solid #aaaab5;border-right:2px solid #aaaab5;border-bottom:2px solid #aaaab5; }
+.div1		{ background:#f3f7ef;text-align:right;padding:3px;margin-top:3px;border:1px solid #eae4dc }
+h1		{ margin:0px;margin-bottom:4px;font-weight:bold;font-size:23px;font-family:arial,tahoma,sans;color:#555564 }
+h2		{ margin:0px;margin-bottom:4px;font-weight:bold;font-size:20px;font-family:arial,tahoma,sans;color:#555564 }
+h3		{ margin:0px;margin-bottom:4px;font-weight:bold;font-size:18px;font-family:arial,tahoma,sans;color:#555564 }
+h4		{ padding:0px;margin:0px;margin-bottom:1px;font-weight:bold;font-size:16px;font-family:arial,tahoma,sans;color:#555564 }
+h5		{ padding:0px;margin:0px;margin-bottom:1px;font-weight:bold;font-size:14px;font-family:arial,tahoma,sans;color:#555564 }
+
+A.tools, A.tools:visited{
+	display:block;
+	padding:4px;
+	padding-left:10px;
+	padding-right:10px;
+	font-weight:bold;
+	font-family:arial,tahoma,sans-serif;
+	font-size:12px;
+	float:right;
+	background:#eeeeee;
+	border:1px solid #aaaaaa;
+	color:#444444;
+	text-decoration:none;
+	margin-left:4px;
+}
+A.tools:hover{
+	background:#ffffff;
+	color:#000000;
+	border:1px dotted #000000;
+	text-decoration:none;
+}
+
+.inputsubmit{
+	padding:4px;
+	padding-left:10px;
+	padding-right:10px;
+	font-weight:bold;
+	font-family:arial,tahoma,sans-serif;
+	font-size:12px;
+	background:#eeeeee;
+	border:1px solid #aaaaaa;
+	color:#444444;
+	text-decoration:none;
+	cursor:pointer;
+}
+.inputsubmit:hover{
+	background:#ffffff;
+	color:#000000;
+	border:1px dotted #000000;
+	text-decoration:none;
+}
+
+.msg_box{
+	margin:10px;padding:10px;font-size:12px;border:1px solid #006600;background:#eeffee;
+	line-height:18px;
+}
+.warning_box{
+	margin:10px;padding:10px;font-size:12px;
+	border:1px solid #666600;background:#ffffee;
+	line-height:18px;
+}
+.header_box{
+	padding:10px;background:#eeeeee;border-bottom:2px dotted #888888;
+}
+.list_box{
+	margin-top:4px;
+	margin-bottom:8px;
+	border:1px solid #cccccc;
+	border-bottom:2px solid #cccccc;
+	border-right:2px solid #cccccc;
+	padding:2px;
+}
+.materi_title_box, .materi_title_box_vid, .materi_title_box_file,
+.kelas_title_box, .pengumuman_title_box, .ujian_title_box,  .mhs_title_box {
+	background:#446699 url('../images/materi.png') no-repeat 5px 7px;
+	border-bottom:1px dotted #888888;
+	font-size:17px;
+	padding:8px;
+	padding-bottom:10px;
+	padding-left:40px;
+	color:#ffffff;
+}
+.pengumuman_title_box{
+	background-image:url('../images/pengumuman.png');
+}
+.ujian_title_box{
+	background-image:url('../images/ujian.png');
+}
+.kelas_title_box{
+	background-image:url('../images/kelas.png');
+}
+.materi_title_box_file{
+	background-image:url('../images/attach.png');
+}
+.materi_title_box_vid{
+	background-image:url('../images/video.png');
+}
+.mhs_title_box{
+	background-image:url('../images/listmhs.png');
+}
+
+.kelas_toolsbox{
+	padding:4px;
+	background:#ffffff;
+}
+.kelas_toolsbox .clearboth{
+	clear:both;
+	height:1px;
+	line-height:1px;
+	overflow:hidden;
+}
+.kelas_toolsbox a, .kelas_toolsbox a:visited{
+	display:block;
+	padding:9px;
+	border:1px solid #cccccc;
+	float:left;
+	margin-bottom:2px;
+	margin-right:2px;
+	background:#f9f9f9 url('../images/right.png') no-repeat 4px 4px;
+	padding-left:34px;
+	color:#555555;
+	text-decoration:none;
+}
+.kelas_toolsbox a:hover{
+	background-color:#dddddd;
+	color:#000000;
+	text-decoration:none;
+	border-color:#444444;
+}
+.kelas_toolsbox a.tool_compose{
+	background-image:url('../images/tulis.png');
+}
+.kelas_toolsbox a.tool_kelas{
+	background-image:url('../images/kelas.png');
+}
+.kelas_toolsbox a.tool_materi{
+	background-image:url('../images/materi.png');
+}
+.kelas_toolsbox a.tool_ujian{
+	background-image:url('../images/ujian.png');
+}
+.kelas_toolsbox a.tool_mhs{
+	background-image:url('../images/listmhs.png');
+}
+.kelas_toolsbox a.tool_prestasi{
+	background-image:url('../images/prestasi.png');
+}
+.kelas_toolsbox a.tool_pengumuman{
+	background-image:url('../images/pengumuman.png');
+}
+.kelas_toolsbox a.tool_passkey{
+	background-image:url('../images/passkey.png');
+}
+.kelas_toolsbox a.tool_forum{
+	background-image:url('../images/forum.png');
+}
+.kelas_toolsbox a.tool_tugas{
+	background-image:url('../images/attach.png');
+}
+.kelas_toolsbox a.tool_hapus{
+	background-image:url('../images/delete.png');
+	float:right;
+}
+.box_list_menu{
+	padding:1px;
+	padding-bottom:5px;
+}
+.box_list_menu a, .box_list_menu a:visited{
+	display:block;
+	padding:20px;
+	border-bottom:1px solid #eeeeee;
+	border-top:1px solid #ffffff;
+	padding-left:100px;
+	background: url('../images/ico_kelas.png') no-repeat 10px 0px #ffffff;
+	min-height:50px;
+}
+.box_list_menu a:hover{
+	background-color:#f8fff8;
+}
+.box_list_menu a b{
+	font-size:16px;
+	display:block;
+	font-weight:normal;
+	color:#006600;
+}
+.box_list_menu a b em{
+	color:#880000;
+}
+.box_list_menu a.tools_ico_pesan{
+	background-image:url('../images/ico_message.png');
+}
+
+.title-content{
+	background:#888888;
+	color:#ffffff;
+	padding:5px;
+	font-weight:bold;
+	font-size:12px;
+}
+
+.boxStatus_list{
+	font-size:12px;
+	border-top:1px solid #eeeeee;
+	padding:10px;
+	clear:both;
+	margin-left: 70px;
+}
+.boxStatus_item:hover{
+	background:#ffffee;
+}
+.boxStatus_list img{
+	width:60px;
+	height:60px;
+	float:left;
+	border:1px solid #cccccc;
+	padding:1px;
+	margin-left :-70px;
+}
+.boxStatus_list a{
+	font-size:18px;
+	display:block;
+}
+.boxStatus_list span{
+	font-size:10px;
+	color:#888888;
+	display:block;
+}
+.boxStatus_list p{
+	display:block;
+	font-size:11px;
+	line-height:16px;
+	padding:0;
+	margin:0;
+}
+.boxStatus_linkGroup{
+	clear:both;
+	margin-left: 80px;
+	background:#deeaef;
+	height:25px;
+	font-size:10px;
+	border-top:1px solid #ffffff;
+}
+.boxStatus_linkGroup span{
+	display:block;
+	float:left;
+	line-height:24px;
+}
+.boxStatus_linkGroup a{
+	display:block;
+	float:left;
+	line-height:24px;
+	padding-left:6px;
+	padding-right:6px;
+}
+.boxStatus_commentGroup{
+	clear:both;
+	margin-left: 80px;
+	background:#eef3f5;
+}
+.boxStatus_commentForm{
+	clear:both;
+	margin-left: 80px;
+	background:#eef3f5;
+	border-top:1px solid #ffffff;
+	display:block;
+	padding:4px;
+	text-align:right;
+}
+.boxStatus_commentForm textarea{
+	width:260px;
+	border:1px solid #99aabb;
+	height:30px;
+	font-size:11px;
+	font-family:arial,tahoma,sans-serif;
+}
+.boxStatus_commentForm input{
+	font-size:11px;
+	font-family:arial,tahoma,sans-serif;
+	cursor:pointer;
+}
+.cb_commentGroup{
+	border-top:1px solid #ffffff;
+	padding:5px;
+	font-size:11px;
+	clear:both;
+	min-height:40px;
+	padding-left:50px;
+}
+.cb_commentGroup img{
+	width:35px;
+	height:35px;
+	float:left;
+	border:1px solid #cccccc;
+	padding:1px;
+	margin-left:-45px;
+}
+.cb_commentGroup div{
+	margin-top:5px;
+	font-size:10px;
+}
+.cb_commentGroup div span{
+	color:#888888;
+}
