@@ -1,67 +1,48 @@
 <?php
-session_start();
-if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])){
-      echo "<link href='style.css' rel='stylesheet' type='text/css'>
-      <center>Untuk mengakses modul, Anda harus login <br>";
-      echo "<a href=../../index.php><b>LOGIN</b></a></center>";
+
+include "../../config/koneksi.php";
+
+$username = $_POST['username'];
+$password = md5($_POST['password']);
+$ulangiPassword = md5($_POST['ulangi_password']);
+
+$nip = $_POST['nip'];
+
+$nis = $_POST['nis'];
+$nama = $_POST['nama'];
+$kelas =  $_POST['kelas'];
+$jurusan = "";
+$tempat = "";
+$tanggal_lahir = "";
+$alamat = $_POST['alamat'];
+$telepon = $_POST['telepon'];
+$email = $_POST['email'];
+$foto= "";
+
+
+$tipe=$_POST['tipe'];
+$modul = 'reg';
+
+if($password != $ulangiPassword){
+    header('location:../../index.php?modul='.$modul.'&tipe=siswa&stat=notmatch');
 }
 else{
-      include "../../config/koneksi.php";
 
-      $username = $_POST['username'];
-
-      $cekPassword = mysql_query("SELECT password FROM user WHERE username='$username'");
-      $r    = mysql_fetch_array($cekPassword);      
-
-      $nama = $_POST['nama'];
-      $alamat = $_POST['alamat'];
-      $telepon = $_POST['telepon'];
-      $email = $_POST['email'];
-
-      $modul=$_GET['modul'];
-      $passMD5 = md5($_POST['password_lama']);
-      $passLama = $r['password'];
-      $password_baru = $_POST['password_baru'];
-      $ulangi_password = $_POST['ulangi_password'];
-
-
-
-      if(empty($_POST['password_baru']))
-      {
-          mysql_query("UPDATE guru SET nama = '$nama',
-                                           alamat = '$alamat',
-                                           telepon = '$telepon',
-                                           email = '$email'
-                                           WHERE username = '$username'");
-          header('location:../../index.php?modul='.$modul.'&stat=updated');
-          //echo "$nama $alamat $telepon $email $username";
-      }
-      else
-      {
-          if(($passLama != $passMD5) || ($password_baru != $ulangi_password)){
-              header('location:../../index.php?modul='.$modul.'&stat=notmatch');
-          }
-          else{
-
-              if($_SESSION['level']=='admin'){
-                  mysql_query("UPDATE admin SET nama = '$nama',
-                                           alamat = '$alamat',
-                                           telepon = '$telepon',
-                                           email = '$email'
-                                           WHERE username = '$username'");
-              }
-              elseif($_SESSION['level']=='guru'){
-                  mysql_query("UPDATE guru SET nama = '$nama',
-                                           alamat = '$alamat',
-                                           telepon = '$telepon',
-                                           email = '$email'
-                                           WHERE username = '$username'");
-              }
-             
-              mysql_query("UPDATE user SET password  = MD5('$password_baru')
-                                           WHERE username = '$username'");
-              header('location:../../index.php?modul='.$modul.'&stat=updated');
-          }
-      }
+    if($tipe=='siswa'){
+        mysql_query("INSERT INTO `user`(`username`,`password`,`level`,`status`)
+                                VALUES('$username','$password','$tipe','Y')");
+        mysql_query("INSERT INTO `siswa`(`nis`,`nama`,`kelas`,`jurusan`,`tempat`,`tanggal_lahir`,`alamat`,`telepon`,`email`,`foto`,`username`)
+                                  VALUES('$nis','$nama','$kelas','$jurusan','$tempat','$tanggal_lahir','$alamat','$telepon','$email','$foto','$username')");
+        //echo"$username $password $tipe<br/>";
+        //echo"$nis $nama $kelas $jurusan $tempat $tanggal_lahir $alamat $telepon $email $foto";
+    }
+    elseif($tipe == 'guru'){
+        mysql_query("INSERT INTO `user`(`username`,`password`,`level`,`status`)
+                                  VALUES('$username','$password','$tipe','N')");
+        mysql_query("INSERT INTO `guru`(`nip`,`nama`,`tempat`,`tanggal_lahir`,`alamat`,`telepon`,`email`,`foto`,`username`)
+                                  VALUES('$nip','$nama','$tempat','$tanggal_lahir','$alamat','$telepon','$email','$foto','$username')");
+    }
+    header('location:../../index.php?stat=added');
 }
+
 ?>

@@ -12,7 +12,7 @@ switch($_GET['tipe'])
 					<h2>Form Pendaftaran Guru</h2>
 				</div>
 				<form method='post' action='$aksi?tipe=guru' style='padding:15px'>
-					<input type='hidden' name='username' value='$r[username]'>
+					<input type='hidden' name='tipe' value='$_GET[tipe]'>
 					<table>
 					<tbody>
 					<tr>
@@ -21,7 +21,7 @@ switch($_GET['tipe'])
 						</td>
 						<td>:</td>
 						<td>
-							<input name='username' style='width:250px' type='text' class='cariInput'></td>
+							<input name='username' style='width:250px' type='text' class='cariInput' required></td>
 					</tr>
 					<tr>
 						<td>
@@ -29,7 +29,7 @@ switch($_GET['tipe'])
 						</td>
 						<td>:</td>
 						<td>
-							<input name='password' style='width:250px' type='password' class='cariInput'>
+							<input name='password' style='width:250px' type='password' class='cariInput' required>
 							</td>
 					</tr>
 					<tr>
@@ -38,8 +38,16 @@ switch($_GET['tipe'])
 						</td>
 						<td>:</td>
 						<td>
-							<input name='ulangi_password' style='width:250px' type='password' class='cariInput'>
+							<input name='ulangi_password' style='width:250px' type='password' class='cariInput' required>
 						</td>
+					</tr>
+					<tr>
+						<td>
+							<b>NIP</b>
+						</td>
+						<td>:</td>
+						<td>
+							<input name='nip' style='width:250px' type='text' class='cariInput' required></td>
 					</tr>
 					<tr>
 						<td>
@@ -47,7 +55,7 @@ switch($_GET['tipe'])
 						</td>
 						<td>:</td>
 						<td>
-							<input name='nama' style='width:250px' type='text' class='cariInput'></td>
+							<input name='nama' style='width:250px' type='text' class='cariInput' required></td>
 					</tr>
 					<tr>
 						<td>
@@ -98,7 +106,7 @@ switch($_GET['tipe'])
 					<h2>Form Pendaftaran Siswa</h2>
 				</div>
 				<form method='post' action='$aksi?tipe=siswa' style='padding:15px'>
-					<input type='hidden' name='username' value='$r[username]'>
+					<input type='hidden' name='tipe' value='$_GET[tipe]'>
 					<table>
 					<tbody>
 					<tr>
@@ -107,7 +115,7 @@ switch($_GET['tipe'])
 						</td>
 						<td>:</td>
 						<td>
-							<input name='username' style='width:250px' type='text' class='cariInput'></td>
+							<input name='username' style='width:250px' type='text' class='cariInput' required></td>
 					</tr>
 					<tr>
 						<td>
@@ -115,7 +123,7 @@ switch($_GET['tipe'])
 						</td>
 						<td>:</td>
 						<td>
-							<input name='password' style='width:250px' type='password' class='cariInput'>
+							<input name='password' style='width:250px' type='password' class='cariInput' required>
 							</td>
 					</tr>
 					<tr>
@@ -124,7 +132,16 @@ switch($_GET['tipe'])
 						</td>
 						<td>:</td>
 						<td>
-							<input name='ulangi_password' style='width:250px' type='password' class='cariInput'>
+							<input name='ulangi_password' style='width:250px' type='password' class='cariInput' required>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<b>NIS</b>
+						</td>
+						<td>:</td>
+						<td>
+							<input name='nis' style='width:250px' type='text' class='cariInput' required>
 						</td>
 					</tr>
 					<tr>
@@ -133,7 +150,17 @@ switch($_GET['tipe'])
 						</td>
 						<td>:</td>
 						<td>
-							<input name='nama' style='width:250px' type='text' class='cariInput'></td>
+							<input name='nama' style='width:250px' type='text' class='cariInput' required>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<b>Kelas</b>
+						</td>
+						<td>:</td>
+						<td>
+							<input name='kelas' style='width:250px' type='text' class='cariInput'>
+						</td>
 					</tr>
 					<tr>
 						<td>
