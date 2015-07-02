@@ -1,4 +1,22 @@
 <?php
+//Hapus Gambar
+function DeleteImage($file_name,$tipe){
+  //direktori gambar
+  if($tipe=='siswa'){
+    unlink("../../foto_siswa/small_$file_name");
+    unlink("../../foto_siswa/medium_$file_name");
+    unlink("../../foto_siswa/$file_name");
+  }elseif($tipe=='guru'){
+    unlink("../../foto_guru/small_$file_name");
+    unlink("../../foto_guru/medium_$file_name");
+    unlink("../../foto_guru/$file_name");
+  }elseif($tipe=='pengumuman'){
+    unlink("../../foto_pengumuman/small_$file_name");
+    unlink("../../foto_pengumuman/medium_$file_name");
+    unlink("../../foto_pengumuman/$file_name");
+  }
+}
+
 // Upload gambar untuk berita
 function UploadImage($fupload_name,$tipe){
   //direktori gambar
@@ -6,6 +24,8 @@ function UploadImage($fupload_name,$tipe){
     $vdir_upload = "../../foto_siswa/";
   }elseif($tipe=='guru'){
     $vdir_upload = "../../foto_guru/";
+  }elseif($tipe=='pengumuman'){
+    $vdir_upload = "../../foto_pengumuman/";
   }
   $vfile_upload = $vdir_upload . $fupload_name;
 

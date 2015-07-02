@@ -113,6 +113,7 @@ include "config/koneksi.php";
 				<a href='?modul=aktifasi-guru'>Aktifasi Guru</a>
 				<a href='?modul=daftar-guru'>Daftar Guru</a>
 				<a href='?modul=daftar-siswa'>Daftar Siswa</a>
+				<a href='?modul=pengumuman'>Pengumuman</a>
 				<a href='?modul=acount'>Ubah Data & Password</a>
 				<a href=\"logout.php\" onClick=\"return confirm('Yakin akan keluar dari system ?')\" style='border-bottom:none'><b>Log Out</b></a>
 			</div>

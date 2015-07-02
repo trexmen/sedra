@@ -27,7 +27,7 @@ switch($_GET['act'])
 			<br/>
 			<h3>Buat Pengumuman Baru</h3>
 			<hr/>
-			<form method='post' action='modul/pengumuman/aksi-pengumuman.php?modul=ruang-guru&act=input'>					
+			<form method='post' action='modul/pengumuman/aksi-pengumuman-kelas.php?modul=ruang-guru&act=input'>					
 			<select class='form-control' id='id_sko' name='id_sko' required><option value='' selected>-- Pilih Kelas --</option>";
                     $tampil=mysql_query("SELECT `id_sko`,`nama_kelas` FROM
 										`sesi_kelas_online`

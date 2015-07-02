@@ -1,33 +1,67 @@
 <?php
-session_start();
-if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])){
-      echo "<link href='style.css' rel='stylesheet' type='text/css'>
-      <center>Untuk mengakses modul, Anda harus login <br>";
-      echo "<a href=../../index.php><b>LOGIN</b></a></center>";
+
+include "../../config/koneksi.php";
+include "../../config/fungsi-thumb.php";
+
+$id_pengumuman = $_POST['id_pengumuman'];
+$judul = $_POST['judul'];
+$deskripsi = $_POST['deskripsi'];
+$image = $_POST['image']!="default.jpg"? $_POST['image'] : "";
+
+$modul = $_GET['modul'];
+$act = $_GET['act'];
+
+$lokasi_file    = $_FILES['fupload']['tmp_name'];
+$tipe_file      = $_FILES['fupload']['type'];
+$nama_file      = $_FILES['fupload']['name'];
+$acak           = rand(000000,999999);
+$nama_file_unik = $acak.$nama_file; 
+
+if ($modul=='pengumuman' AND $act=='delete'){
+      $data=mysql_fetch_array(mysql_query("SELECT `image` FROM `pengumuman` WHERE `id_pengumuman`='$_GET[id]'"));
+      if ($data['image']!=''){
+          mysql_query("DELETE FROM pengumuman WHERE id_pengumuman='$_GET[id]'");
+          DeleteImage($data['image'],$modul);
+      }
+      else{
+          mysql_query("DELETE FROM pengumuman WHERE id_pengumuman='$_GET[id]'");
+      }   
+      header('location:../../index.php?modul='.$modul.'&stat=deleted');
 }
-else{
-      include "../../config/koneksi.php";
+elseif($modul=='pengumuman' AND $act=='input'){
 
-      $modul = $_GET['modul'];
-      $act   = $_GET['act'];
-
-      $id_sko     = $_POST['id_sko'];
-      $nip        = $_POST['nip'];
-      $deskripsi  = $_POST['deskripsi'];
-      $judul      = $_POST['judul'];
-
-      //echo "$nip $nama_kelas $id_mp $jumlah_siswa $limited_value";
-      if ($modul=='buat-kelas' AND $act=='hapus'){
-          mysql_query("DELETE FROM `user` WHERE username='$_GET[username]'"); 
-          header('location:../../index.php?modul='.$modul);
+      if (empty($lokasi_file)){          
+          mysql_query("INSERT INTO `pengumuman`(`id_pengumuman`,`judul`,`deskripsi`) VALUES(NULL,'$judul ','$deskripsi')");
+          header('location:../../index.php?modul='.$modul.'&stat=added');
       }
-      elseif ($modul=='ruang-guru' AND $act=='input'){
-        mysql_query("INSERT INTO `pengumuman_kelas`(`id_pengumuman`,`judul`,`deskripsi`,`id_sko`) VALUES(NULL,'$judul','$deskripsi','$id_sko')");             
-        header('location:../../index.php?modul='.$modul);
-      }
-      elseif ($modul=='buat-kelas' AND $act=='update'){
-        mysql_query("UPDATE `user` SET `password`=MD5(`username`) WHERE `username`='$_GET[username]'");             
-        header('location:../../index.php?modul='.$modul);
+      else{          
+          if($tipe_file != "image/jpeg" AND $tipe_file != "image/jpg"){
+              header('location:../../index.php?modul='.$modul.'&stat=failed');
+          }
+          else{
+              UploadImage($nama_file_unik,$modul);
+              mysql_query("INSERT INTO `pengumuman`(`id_pengumuman`,`judul`,`deskripsi`,`image`) VALUES(NULL,'$judul ','$deskripsi','$nama_file_unik')");   
+              header('location:../../index.php?modul='.$modul.'&stat=added');
+          }          
       }
 }
+elseif($modul=='pengumuman' AND $act=='edit'){
+
+      if (empty($lokasi_file)){          
+          mysql_query("UPDATE `pengumuman` SET `judul`='$judul',`deskripsi`='$deskripsi' WHERE `id_pengumuman`='$id_pengumuman'");
+          header('location:../../index.php?modul='.$modul.'&stat=updated');
+      }
+      else{          
+          if($tipe_file != "image/jpeg" AND $tipe_file != "image/jpg"){
+              header('location:../../index.php?modul='.$modul.'&stat=failed');
+          }
+          else{
+              UploadImage($nama_file_unik,$modul);   
+              DeleteImage($image,$modul);
+              mysql_query("UPDATE `pengumuman` SET `judul`='$judul',`deskripsi`='$deskripsi',`image`='$nama_file_unik' WHERE `id_pengumuman`='$id_pengumuman'");
+              header('location:../../index.php?modul='.$modul.'&stat=updated');
+          }          
+      }
+}
+
 ?>

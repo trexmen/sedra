@@ -155,6 +155,13 @@ elseif ($_GET['modul']=='daftar-siswa'){
   }
 }
 
+// Bagian Admin
+elseif ($_GET['modul']=='pengumuman'){
+  if ($_SESSION['level']=='admin'){
+    include "modul/pengumuman/pengumuman.php";
+  }
+}
+
 // Bagian Registrasi
 elseif ($_GET['modul']=='reg'){
     include "modul/registrasi/registrasi.php";
