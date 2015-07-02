@@ -73,6 +73,10 @@ $level = $_SESSION['level'];
 		font-weight:bold;
 	}
 </style>
+
+<link href="js/slider/js-image-slider.css" rel="stylesheet" type="text/css" />
+	<script src="js/slider/js-image-slider.js" type="text/javascript"></script>
+<link href="js/slider/generic.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 

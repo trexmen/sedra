@@ -52,7 +52,7 @@ echo"
 	    $batas  = 20;
 	    $posisi = $p->cariPosisi($batas);
 
-	    $tampil = mysql_query("SELECT * FROM pengumuman ORDER BY `tanggal` DESC LIMIT $posisi,$batas");
+	    $tampil = mysql_query("SELECT `id_pengumuman`,`judul`,CONCAT(SUBSTRING(`deskripsi`, 1, 50),'...') AS 'deskripsi',`image`,`tanggal` FROM pengumuman ORDER BY `tanggal` DESC LIMIT $posisi,$batas");
 	    
 
 	    $no = $posisi+1;
@@ -104,7 +104,7 @@ echo"
 	    $batas  = 20;
 	    $posisi = $p->cariPosisi($batas);
 
-	    $tampil = mysql_query("SELECT * FROM pengumuman WHERE `judul` LIKE '%$_GET[kata]%' OR `deskripsi` LIKE '%$_GET[kata]%' ORDER BY `tanggal` DESC LIMIT $posisi,$batas");
+	    $tampil = mysql_query("SELECT `id_pengumuman`,`judul`,CONCAT(SUBSTRING(`deskripsi`, 1, 50),'...') AS 'deskripsi',`image`,`tanggal` FROM pengumuman WHERE `judul` LIKE '%$_GET[kata]%' OR `deskripsi` LIKE '%$_GET[kata]%' ORDER BY `tanggal` DESC LIMIT $posisi,$batas");
 	    
 
 	    $no = $posisi+1;
