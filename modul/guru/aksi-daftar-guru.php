@@ -7,6 +7,7 @@ if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])){
 }
 else{
       include "../../config/koneksi.php";
+      include "../../config/send-email.php";
 
       $modul=$_GET['modul'];
       $act=$_GET['act'];
@@ -18,7 +19,8 @@ else{
           header('location:../../index.php?modul='.$modul.'&halaman='.$halaman);
       }
       elseif ($modul=='daftar-guru' AND $act=='reset'){
-        mysql_query("UPDATE `user` SET `password`=MD5(`username`) WHERE `username`='$_GET[username]'");             
+        mysql_query("UPDATE `user` SET `password`=MD5(`username`) WHERE `username`='$_GET[username]'");\
+        send_email('Guru','$nama','$email',$_GET['username'],$_GET['username']);               
         header('location:../../index.php?modul='.$modul.'&halaman='.$halaman);
       }
 }

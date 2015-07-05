@@ -386,7 +386,7 @@ get_status_data(true);
 				</table>
 			</div>
 			<div class='kelas_toolsbox'>
-				<a class='tool_kelas' href='?modul=masuk-kelas&nis=$nis[nis]&id_sko=$r[id_sko]'>Masuk Kelas</a><a class='tool_prestasi' href=''>Nilai Ujian</a><a class='tool_mhs' href='?modul=list-siswa&nis=$nis[nis]&id_sko=$r[id_sko]'>Daftar Siswa</a><a class='tool_compose' href='http://kuliahonline.unikom.ac.id/?kontak/&COMPOSED=kontak&tFOR=2&idFOR=istiqomah'>Kontak Guru</a>
+				<a class='tool_kelas' href='?modul=masuk-kelas&nis=$nis[nis]&id_sko=$r[id_sko]'>Masuk Kelas</a><a class='tool_mhs' href='?modul=list-siswa&nis=$nis[nis]&id_sko=$r[id_sko]'>Daftar Siswa</a>
 				<div class='clearboth'>&nbsp;</div>
 			</div>
 		</div>

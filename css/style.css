@@ -1,13 +1,13 @@
 body{
 	cursor:default;
-	background:#555555;
+	background:#313CA6;
 	margin:0;
 	padding:0;
 	font-family:arial,verdana,tahoma,sans;
 	font-size:12px;
 }
 #main_root{
-	 background:url('../images/bg_top.png') repeat-x top left;
+	 /*background:url('../images/bg_top.png') repeat-x top left;*/
 }
 td{
 	font-size:12px
@@ -29,20 +29,22 @@ form{
 }
 .box_menu_kiri a:hover{
 	text-decoration:none;
-	background:#444444;
+	background:#0573BC;
 	color:#ffffff;
 }
 #main_kuliahonline{
 	margin:auto;
 	width:980px;
 }
-/*#main_page_header{
+#main_page_header{
 	height:98px;
-	background:url('../images/logo_smkn2subang.png') no-repeat right 0px;
-}*/
+/*	background:url('../images/logo_smkn2subang.png') no-repeat right 0px;*/
+	background:url('../images/bg_top.png') repeat-x top left;
+}
 #main_page_header_logo{
 	height:58px;
 	background:url('../images/logo1.png') no-repeat left 5px;
+	margin-left: 20px
 }
 #main_top_mainmenu{
 	height:40px;
@@ -66,7 +68,7 @@ form{
 #main_top_mainmenu a:hover{
 	text-decoration:none;
 	color:#ffffff;
-	background-color:#444444;
+	background-color:#3B69DE;
 }
 #main_top_mainmenu a.menu_listmhs{
 	background-image:url('../images/listmhs.png');
@@ -136,11 +138,11 @@ A:hover 	{ COLOR: #0066cc;  TEXT-DECORATION: underline}
 .innerModul	{ width:100%;vertical-align:top;padding:5px;background:url('./gambar/bg4.jpg') no-repeat bottom right #ffffff;border:1px solid #aaaab5;border-right:2px solid #aaaab5;border-bottom:2px solid #aaaab5; }
 .innerModul2	{ width:100%;vertical-align:top;padding:5px;border:1px solid #aaaab5;border-right:2px solid #aaaab5;border-bottom:2px solid #aaaab5; }
 .div1		{ background:#f3f7ef;text-align:right;padding:3px;margin-top:3px;border:1px solid #eae4dc }
-h1		{ margin:0px;margin-bottom:4px;font-weight:bold;font-size:23px;font-family:arial,tahoma,sans;color:#555564 }
-h2		{ margin:0px;margin-bottom:4px;font-weight:bold;font-size:20px;font-family:arial,tahoma,sans;color:#555564 }
-h3		{ margin:0px;margin-bottom:4px;font-weight:bold;font-size:18px;font-family:arial,tahoma,sans;color:#555564 }
-h4		{ padding:0px;margin:0px;margin-bottom:1px;font-weight:bold;font-size:16px;font-family:arial,tahoma,sans;color:#555564 }
-h5		{ padding:0px;margin:0px;margin-bottom:1px;font-weight:bold;font-size:14px;font-family:arial,tahoma,sans;color:#555564 }
+h1		{ margin:0px;margin-bottom:4px;font-weight:bold;font-size:23px;font-family:arial,tahoma,sans;color:#3B69DE }
+h2		{ margin:0px;margin-bottom:4px;font-weight:bold;font-size:20px;font-family:arial,tahoma,sans;color:#3B69DE }
+h3		{ margin:0px;margin-bottom:4px;font-weight:bold;font-size:18px;font-family:arial,tahoma,sans;color:#3B69DE }
+h4		{ padding:0px;margin:0px;margin-bottom:1px;font-weight:bold;font-size:16px;font-family:arial,tahoma,sans;color:#3B69DE }
+h5		{ padding:0px;margin:0px;margin-bottom:1px;font-weight:bold;font-size:14px;font-family:arial,tahoma,sans;color:#3B69DE }
 
 A.tools, A.tools:visited{
 	display:block;
@@ -194,7 +196,7 @@ A.tools:hover{
 	line-height:18px;
 }
 .header_box{
-	padding:10px;background:#eeeeee;border-bottom:2px dotted #888888;
+	padding:10px;background:#182020;border-bottom:2px dotted #888888;
 }
 .list_box{
 	margin-top:4px;
@@ -206,7 +208,7 @@ A.tools:hover{
 }
 .materi_title_box, .materi_title_box_vid, .materi_title_box_file,
 .kelas_title_box, .pengumuman_title_box, .ujian_title_box,  .mhs_title_box {
-	background:#446699 url('../images/materi.png') no-repeat 5px 7px;
+	background:#3B69DE url('../images/materi.png') no-repeat 5px 7px;
 	border-bottom:1px dotted #888888;
 	font-size:17px;
 	padding:8px;

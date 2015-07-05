@@ -6,7 +6,7 @@ include "config/koneksi.php";
 	if(!isset($_SESSION['level'])){ 
 	echo"
   	<div style='border:1px solid #cccccc;padding:2px;margin-bottom:4px'>
-		<div style='border-top:4px solid #999999;padding:5px;background:#444444;color:#ffffff;font-weight:bold;'>LOGIN</div>
+		<div style='border-top:4px solid #999999;padding:5px;background:#0573BC;color:#ffffff;font-weight:bold;'>LOGIN</div>
 		<div style='padding:4px;background:#f8f8f8'>
 			<form onsubmit='return LoginCheck(this)' method='post' action='cek_login.php'>
 				<table style='width:100%' cellpadding='0' cellspacing='2'>
@@ -32,13 +32,13 @@ include "config/koneksi.php";
 				</tbody>
 				</table><!--
 				<div style='text-align:center;padding:5px;margin-top:5px;border:1px solid #ccc;background:#fff;font-size:11px'>
-					<a href='https://login.unikom.ac.id/?action=04k08601k00u0t605h36c19d1ny26l00t2kr0ef081bcx13701c02m01h03d1h202a2i129f2so36400u2so0w103aaaq2so03d02m02w05t06i02a2e023336c0650872vv08r02w0qr3a102w07x03d0050mr03o3a129f26k13d00536o19k02wcf81xe01k01y01o08600o01k2bj0bu0o336p0451xe11106g2v93a206g02k00k01y0hl0141xe07p08o05504w2e00o801k3iv0yx08508608807x13g01h08o1ik2so0tf02m2bj11o0020om1ny01h00500201a1fc05h36c0db2i12wt0192so17g03d6y21fx00207505b0050nt02a2so2760ku2660190yx'></a>
+					<a href='?action=04k08601k00u0t605h36c19d1ny26l00t2kr0ef081bcx13701c02m01h03d1h202a2i129f2so36400u2so0w103aaaq2so03d02m02w05t06i02a2e023336c0650872vv08r02w0qr3a102w07x03d0050mr03o3a129f26k13d00536o19k02wcf81xe01k01y01o08600o01k2bj0bu0o336p0451xe11106g2v93a206g02k00k01y0hl0141xe07p08o05504w2e00o801k3iv0yx08508608807x13g01h08o1ik2so0tf02m2bj11o0020om1ny01h00500201a1fc05h36c0db2i12wt0192so17g03d6y21fx00207505b0050nt02a2so2760ku2660190yx'></a>
 				</div>-->
 			</form>
 		</div>
 	</div>
 	<div style='border:1px solid #cccccc;padding:2px;margin-bottom:4px'>
-		<div style='border-top:4px solid #999999;padding:5px;background:#444444;color:#ffffff;font-weight:bold;'>DAFTAR</div>
+		<div style='border-top:4px solid #999999;padding:5px;background:#0573BC;color:#ffffff;font-weight:bold;'>DAFTAR</div>
 		<div style='padding:4px;background:#f8f8f8'>
 			Pilih tipe account, lalu klik daftar untuk melakukan pendaftaran.<br>
 			<br>
@@ -59,7 +59,7 @@ include "config/koneksi.php";
   	$r = mysql_fetch_array(mysql_query("SELECT * FROM siswa JOIN user USING(username) WHERE username='".$_SESSION['username']."'"));
   	echo"
 	<div style='border:1px solid #cccccc;padding:2px;margin-bottom:4px'>
-		<div style='border-top:4px solid #999999;padding:5px;background:#444444;color:#ffffff;font-weight:bold;'>".$r['nama']."</div>
+		<div style='border-top:4px solid #999999;padding:5px;background:#0573BC;color:#ffffff;font-weight:bold;'>".$r['nama']."</div>
 		<div style='padding:4px;background:#f8f8f8'>
 			<div style='border-bottom:1px solid #cccccc;padding-bottom:5px'>		
 				<div style='text-align:center'>
@@ -81,7 +81,7 @@ include "config/koneksi.php";
   	$r = mysql_fetch_array(mysql_query("SELECT * FROM guru JOIN user USING(username) WHERE username='".$_SESSION['username']."'"));
   	echo"
   	<div style='border:1px solid #cccccc;padding:2px;margin-bottom:4px'>
-		<div style='border-top:4px solid #999999;padding:5px;background:#444444;color:#ffffff;font-weight:bold;'>".$r['nama']."</div>
+		<div style='border-top:4px solid #999999;padding:5px;background:#0573BC;color:#ffffff;font-weight:bold;'>".$r['nama']."</div>
 		<div style='padding:4px;background:#f8f8f8'>
 			<div style='border-bottom:1px solid #cccccc;padding-bottom:5px'>
 				<div style='text-align:center'>
@@ -102,7 +102,7 @@ include "config/koneksi.php";
   	$r = mysql_fetch_array(mysql_query("SELECT * FROM admin JOIN user USING(username) WHERE username='".$_SESSION['username']."'"));
   	echo"
   	<div style='border:1px solid #cccccc;padding:2px;margin-bottom:4px'>
-		<div style='border-top:4px solid #999999;padding:5px;background:#444444;color:#ffffff;font-weight:bold;'>".$r['nama']."</div>
+		<div style='border-top:4px solid #999999;padding:5px;background:#0573BC;color:#ffffff;font-weight:bold;'>".$r['nama']."</div>
 		<div style='padding:4px;background:#f8f8f8'>
 			<div style='border-bottom:1px solid #cccccc;padding-bottom:5px'>
 				<div style='text-align:center'>
