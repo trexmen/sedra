@@ -47,7 +47,8 @@ switch($_GET['tipe'])
 						</td>
 						<td>:</td>
 						<td>
-							<input name='nip' style='width:250px' type='text' class='cariInput' required></td>
+							<input name='nip' style='width:250px' type='text' class='cariInput' placeholder='19 Digit' required>
+						</td>
 					</tr>
 					<tr>
 						<td>
@@ -134,7 +135,7 @@ switch($_GET['tipe'])
 						</td>
 						<td>:</td>
 						<td>
-							<input name='username' style='width:250px' type='text' class='cariInput' required></td>
+							<input name='username' style='width:250px' type='text' class='cariInputDigit' required></td>
 					</tr>
 					<tr>
 						<td>
@@ -160,7 +161,7 @@ switch($_GET['tipe'])
 						</td>
 						<td>:</td>
 						<td>
-							<input name='nis' style='width:250px' type='text' class='cariInput' required>
+							<input name='nis' style='width:250px' type='text' class='cariInput' ' placeholder='9 Digit' required>
 						</td>
 					</tr>
 					<tr>

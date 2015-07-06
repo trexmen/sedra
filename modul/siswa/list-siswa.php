@@ -46,7 +46,6 @@ echo"
 								<tr style='background: rgb(255, 255, 255);' onmouseover='this.style.background=&#39;#ffffdd&#39;;' onmouseout='this.style.background=&#39;#ffffff&#39;;'>
 									<td valign='top' align='center'>
 										<img src='foto_siswa/".$r['foto']."' style='border:1px solid #cccccc;padding:1px;background:#ffffff' width='100' height='100' alt=''><br>
-										<input type='button' class='inputsubmit' onclick='location=&#39;./?home/&amp;mahasiswa=kontak&amp;COMPOSED=kontak&amp;tFOR=1&amp;idFOR=kuyachan&#39;' value='Kirim Pesan'>
 									</td>
 									<td width='100%' valign='top'>
 										<div class='mhs_title_box' style='margin:0'>".$no.". ".$r['nama']."</div>
