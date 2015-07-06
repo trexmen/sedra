@@ -34,7 +34,6 @@ else{
                                            email = '$email'
                                            WHERE username = '$username'");
           header('location:../../index.php?modul='.$modul.'&stat=updated');
-          //echo "$nama $alamat $telepon $email $username";
       }
       else
       {
@@ -59,7 +58,7 @@ else{
               }
              
               mysql_query("UPDATE user SET password  = MD5('$password_baru')
-                                           WHERE username = '$username'");
+                                           WHERE username = '$username'");              
               header('location:../../index.php?modul='.$modul.'&stat=updated');
           }
       }

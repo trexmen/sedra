@@ -8,6 +8,22 @@ include "config/koneksi.php";
   	<div style='border:1px solid #cccccc;padding:2px;margin-bottom:4px'>
 		<div style='border-top:4px solid #999999;padding:5px;background:#0573BC;color:#ffffff;font-weight:bold;'>LOGIN</div>
 		<div style='padding:4px;background:#f8f8f8'>
+
+			";
+		//====Pesan Validasi========
+            if(!isset($_GET[stat]))
+            {
+              echo"<div></div>";
+            }
+            elseif($_GET[stat]=='invalid')
+            {
+              echo"<div class='alert alert-danger alert-dismissable'>
+                Maaf, Username atau Password Anda tidak sesuai..
+                </div>";
+            }            
+            //==================
+         echo"
+
 			<form onsubmit='return LoginCheck(this)' method='post' action='cek_login.php'>
 				<table style='width:100%' cellpadding='0' cellspacing='2'>
 				<tbody>
@@ -59,7 +75,7 @@ include "config/koneksi.php";
   	$r = mysql_fetch_array(mysql_query("SELECT * FROM siswa JOIN user USING(username) WHERE username='".$_SESSION['username']."'"));
   	echo"
 	<div style='border:1px solid #cccccc;padding:2px;margin-bottom:4px'>
-		<div style='border-top:4px solid #999999;padding:5px;background:#0573BC;color:#ffffff;font-weight:bold;'>".$r['nama']."</div>
+		<div style='border-top:4px solid #999999;padding:5px;background:#0573BC;color:#ffffff;font-weight:bold;'><center>".$r['nama']."</center></div>
 		<div style='padding:4px;background:#f8f8f8'>
 			<div style='border-bottom:1px solid #cccccc;padding-bottom:5px'>		
 				<div style='text-align:center'>
@@ -81,7 +97,7 @@ include "config/koneksi.php";
   	$r = mysql_fetch_array(mysql_query("SELECT * FROM guru JOIN user USING(username) WHERE username='".$_SESSION['username']."'"));
   	echo"
   	<div style='border:1px solid #cccccc;padding:2px;margin-bottom:4px'>
-		<div style='border-top:4px solid #999999;padding:5px;background:#0573BC;color:#ffffff;font-weight:bold;'>".$r['nama']."</div>
+		<div style='border-top:4px solid #999999;padding:5px;background:#0573BC;color:#ffffff;font-weight:bold;'><center>".$r['nama']."</center></div>
 		<div style='padding:4px;background:#f8f8f8'>
 			<div style='border-bottom:1px solid #cccccc;padding-bottom:5px'>
 				<div style='text-align:center'>
@@ -99,22 +115,17 @@ include "config/koneksi.php";
   		";
   	}
   	elseif ($_SESSION['level']=='admin'){ 
-  	$r = mysql_fetch_array(mysql_query("SELECT * FROM admin JOIN user USING(username) WHERE username='".$_SESSION['username']."'"));
+  	$r = mysql_fetch_array(mysql_query("SELECT * FROM user WHERE username='".$_SESSION['username']."'"));
   	echo"
   	<div style='border:1px solid #cccccc;padding:2px;margin-bottom:4px'>
-		<div style='border-top:4px solid #999999;padding:5px;background:#0573BC;color:#ffffff;font-weight:bold;'>".$r['nama']."</div>
+		<div style='border-top:4px solid #999999;padding:5px;background:#0573BC;color:#ffffff;font-weight:bold;'><center>".$r['username']."</center></div>
 		<div style='padding:4px;background:#f8f8f8'>
-			<div style='border-bottom:1px solid #cccccc;padding-bottom:5px'>
-				<div style='text-align:center'>
-					<img src='foto_guru/".$r['foto']."' width='100' height='100' alt='' style='padding:1px;border:1px solid #aaaaaa'>
-				</div>
-			</div>
 			<div class='box_menu_kiri'>
 				<a href='?modul=aktifasi-guru'>Aktifasi Guru</a>
 				<a href='?modul=daftar-guru'>Daftar Guru</a>
 				<a href='?modul=daftar-siswa'>Daftar Siswa</a>
 				<a href='?modul=pengumuman'>Pengumuman</a>
-				<a href='?modul=acount'>Ubah Data & Password</a>
+				<a href='?modul=acount'>Ubah Password</a>
 				<a href=\"logout.php\" onClick=\"return confirm('Yakin akan keluar dari system ?')\" style='border-bottom:none'><b>Log Out</b></a>
 			</div>
 		</div>

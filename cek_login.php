@@ -46,8 +46,8 @@ if ($ketemu > 0){
   mysql_query("UPDATE user SET id_session='$sid_baru' WHERE username='$username'");
   if(!isset($_POST['modul'])){
       if($_SESSION['level']=='admin'){
-          $r=mysql_fetch_array(mysql_query("SELECT `nama` FROM `admin` WHERE `username`='".$username."'"));
-          $_SESSION['nama']         = $r['nama'];
+          $r=mysql_fetch_array(mysql_query("SELECT `username` FROM `user` WHERE `username`='".$username."'"));
+          $_SESSION['nama']         = $r['username'];
           header('location:index.php?modul=aktifasi-guru');
       }
       elseif($_SESSION['level']=='guru'){
@@ -66,7 +66,7 @@ if ($ketemu > 0){
   }
 }
 else{
-  header('location:index.php');
+  header('location:index.php?stat=invalid');
 }
 }
 

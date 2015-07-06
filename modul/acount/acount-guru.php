@@ -7,20 +7,53 @@ if (empty($_SESSION['username']) AND empty($_SESSION['passuser'])){
 else{
     $aksi="modul/acount/aksi-acount-guru.php";
 
-    if($_SESSION['level']=='admin'){
-        $edit = mysql_query("SELECT * FROM admin JOIN user USING(username) WHERE username='".$_SESSION['username']."'");
-    }
-    elseif($_SESSION['level']=='guru'){
         $edit = mysql_query("SELECT * FROM guru JOIN user USING(username) WHERE username='".$_SESSION['username']."'");
-    }
+
         $r = mysql_fetch_array($edit);
 
         echo "
 	<div style='width:765px;padding-bottom:5px;'>
-		<div class='header_box'>
+		<div class='header_box' style='color:white;'>
 			<h2>Ubah Data dan Password</h2>
 			 Username : <b>".$_SESSION['username']."</b>, Tipe User: <b>".$_SESSION['level']."</b>
-		</div>
+		</div>";
+		//====Pesan Validasi========
+            if(!isset($_GET[stat]))
+            {
+              echo"<div></div>";
+            }
+            elseif($_GET[stat]=='added')
+            {
+              echo"<div class='alert alert-success alert-dismissable'>
+                Data baru berhasil di tambahkan
+                </div>";
+            }
+            elseif($_GET[stat]=='updated')
+            {
+              echo"<div class='alert alert-success alert-dismissable'>
+                Data berhasil diubah
+                </div>";
+            }
+            elseif($_GET[stat]=='notmatch')
+            {
+            echo"<div class='alert alert-danger alert-dismissable'>
+                 Maaf, data gagal diupdate
+                </div>";
+            }
+            elseif($_GET[stat]=='failed')
+            {
+            echo"<div class='alert alert-danger alert-dismissable'>
+                 Maaf, Data ini tidak bisa dihapus karena sudah berelasi dengan data lainnya
+                </div>";
+            }
+            elseif($_GET[stat]=='deleted')
+            {
+              echo"<div class='alert alert-success alert-dismissable'>
+                Data berhasil di hapus
+                </div>";
+            }
+            //==================
+         echo"
 		<form method='post' action='$aksi?modul=$_GET[modul]' style='padding:15px'>
 			<input type='hidden' name='username' value='$r[username]'>
 			<table>

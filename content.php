@@ -83,8 +83,11 @@ elseif ($_GET['modul']=='acount'){
   if ($_SESSION['level']=='siswa'){
     include "modul/acount/acount.php";
   }
-  elseif (($_SESSION['level']=='guru')||($_SESSION['level']=='admin')){
+  elseif ($_SESSION['level']=='guru'){
     include "modul/acount/acount-guru.php";
+  }
+  elseif ($_SESSION['level']=='admin'){
+    include "modul/acount/acount-admin.php";
   }
 }
 
