@@ -47,7 +47,7 @@ switch($_GET['tipe'])
 						</td>
 						<td>:</td>
 						<td>
-							<input name='nip' id='nip' style='width:250px' type='text' class='cariInput' placeholder='19 Digit' required>
+							<input name='nip' id='nip' style='width:250px' type='text' class='cariInput' maxlength='19' required>
 						</td>
 					</tr>
 					<tr>
@@ -82,7 +82,7 @@ switch($_GET['tipe'])
 						</td>
 						<td>:</td>
 						<td>
-							<input name='telepon' style='width:150px' type='text' class='cariInput'></td>
+							<input name='telepon' style='width:150px' type='text'  maxlength='12' class='cariInput'></td>
 					</tr>
 					<tr>
 						<td>&nbsp;</td>
@@ -161,7 +161,7 @@ switch($_GET['tipe'])
 						</td>
 						<td>:</td>
 						<td>
-							<input name='nis' id='nip' style='width:250px' type='text' class='cariInput' ' placeholder='9 Digit' required>
+							<input name='nis' id='nip' style='width:250px' type='text' class='cariInput' maxlength='9' required>
 						</td>
 					</tr>
 					<tr>
@@ -206,7 +206,7 @@ switch($_GET['tipe'])
 						</td>
 						<td>:</td>
 						<td>
-							<input name='telepon' style='width:150px' type='text' class='cariInput'></td>
+							<input name='telepon' style='width:150px' type='text' class='cariInput' maxlength='12'></td>
 					</tr>
 					<tr>
 						<td>&nbsp;</td>
@@ -248,11 +248,3 @@ switch($_GET['tipe'])
 	echo "</div>";
 ?>
 
-<script type="text/javascript">
-$(document).ready(function(){
-	$("#nip").keypress(function(){
-	    var length = $("#nip").length;
-	    alert(length);
-	});
-});
-</script>

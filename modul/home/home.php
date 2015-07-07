@@ -30,7 +30,7 @@ echo"
 		</div>";
 		while ($r=mysql_fetch_array($tampil)) {
 			echo"
-		<div class='alert alert-success' style='border:1px dashed #ccc0bb;background:#fffaf5;padding:10px;margin-top:10px;margin-bottom:5px'>
+		<div class='alert alert-success' style='border:1px #ccc0bb;background:#ECECEC;padding:10px;margin-top:10px;margin-bottom:5px'>
 			<b>$r[judul]</b>
 			<hr/>
 			<table width='100%' border='0'>

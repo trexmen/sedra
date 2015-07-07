@@ -20,7 +20,7 @@ $level = $_SESSION['level'];
 <!-- <script src='js/passport.js'></script> -->
 <title>Kelas Online - SMK PGRI Palabuhanratu</title>
 <link href='css/style.css' rel='stylesheet' type='text/css'>
-<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
 <script type='text/javascript' src='js/main.js'></script>
 <script type='text/javascript' src='js/tiny_mce.js'></script>
 <meta name='alexaVerifyID' content='IcxltaQT2dmI6uwT5Zs2QG37u48'>
