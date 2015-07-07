@@ -54,13 +54,23 @@ else{
             }
             //==================
          echo"
-		<form method='post' action='$aksi?modul=$_GET[modul]' style='padding:15px'>
+		<form method='post' action='$aksi?modul=$_GET[modul]' style='padding:15px' enctype='multipart/form-data'>
 			<input type='hidden' name='username' value='$r[username]'>
 			<table>
 			<tbody>
 			<tr>
 				<td colspan='3'>
 					<h3>Ubah Data Diri.</h3>
+				</td>
+			</tr>
+			<tr>
+				<td valign='top'>
+					<b>Foto</b>
+				</td>
+				<td valign='top'>:</td>
+				<td>
+					<img src='foto_guru/".$r['foto']."' width='100' height='100' alt='' style='padding:1px;border:1px solid #aaaaaa'><br/>
+					<input name='fupload' style='width:250px' type='file'>
 				</td>
 			</tr>
 			<tr>
