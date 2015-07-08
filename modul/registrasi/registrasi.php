@@ -60,7 +60,7 @@ switch($_GET['tipe'])
 					</tr>
 					<tr>
 						<td>
-							<b>Tempat Tanggal Lahir*</b>
+							<b>Tempat Tanggal Lahir</b>
 						</td>
 						<td>:</td>
 						<td>
@@ -93,7 +93,7 @@ switch($_GET['tipe'])
 						</td>
 						<td>:</td>
 						<td>
-							<input name='email' style='width:250px' type='text' class='cariInput'>
+							<input name='email' style='width:250px' type='email' class='cariInput'>
 						</td>
 					</tr>
 					<tr>
@@ -114,6 +114,7 @@ switch($_GET['tipe'])
 						<td>
 							<input type='submit' class='inputsubmit' value='Daftarkan'></td>
 					</tr>
+					* = Wajib diisi
 					</tbody>
 					</table>
 				</form>
@@ -175,7 +176,7 @@ switch($_GET['tipe'])
 					</tr>
 					<tr>
 						<td>
-							<b>Tempat Tanggal Lahir*</b>
+							<b>Tempat Tanggal Lahir</b>
 						</td>
 						<td>:</td>
 						<td>
@@ -217,7 +218,7 @@ switch($_GET['tipe'])
 						</td>
 						<td>:</td>
 						<td>
-							<input name='email' style='width:250px' type='text' class='cariInput'></td>
+							<input name='email' style='width:250px' type='email' class='cariInput'></td>
 					</tr>
 					<tr>
 						<td>
@@ -237,6 +238,7 @@ switch($_GET['tipe'])
 						<td>
 							<input type='submit' class='inputsubmit' value='Daftarkan'></td>
 					</tr>
+					* = Wajib diisi
 					</tbody>
 					</table>
 				</form>

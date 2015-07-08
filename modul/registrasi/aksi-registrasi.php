@@ -48,14 +48,17 @@ else{
                                         VALUES('$nis','$nama','$kelas','$jurusan','$tempat','$tanggal_lahir','$alamat','$telepon','$email','$nama_file_unik','$username')");
               //echo"$username $password $tipe<br/>";
               //echo"$nis $nama $kelas $jurusan $tempat $tanggal_lahir $alamat $telepon $email $foto";
+              header('location:../../index.php?reg=ssuccess');
           }
           elseif($tipe == 'guru'){
               mysql_query("INSERT INTO `user`(`username`,`password`,`level`,`status`)
                                         VALUES('$username','$password','$tipe','N')");
               mysql_query("INSERT INTO `guru`(`nip`,`nama`,`tempat`,`tanggal_lahir`,`alamat`,`telepon`,`email`,`foto`,`username`)
                                         VALUES('$nip','$nama','$tempat','$tanggal_lahir','$alamat','$telepon','$email','$nama_file_unik','$username')");
+              header('location:../../index.php?reg=gsuccess');
           }
-          header('location:../../index.php?stat=added');
+          //echo "<script>alert('Data Anda berhasil di daftarkan dan menunggu persetujuan dari admin'); window.location = '../../index.php'</script>";
+          
       }
 }
 

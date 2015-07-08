@@ -11,11 +11,13 @@ include "../../config/fungsi-thumb.php";
 
 $modul=$_GET['modul'];
 $act=$_GET['act'];
+$nip=$_GET['nip'];
+$id_sko=$_GET['id_sko'];
 
 // Hapus download
 if ($modul=='guru-masuk-kelas' AND $act=='hapus'){
-  mysql_query("DELETE FROM download WHERE id_download='$_GET[id]'");
-  header('location:../../index.php?modul='.$modul);
+  mysql_query("DELETE FROM materi WHERE id_materi='$_GET[id]'");
+  header('location:../../index.php?modul='.$modul.'&nip='.$nip.'&id_sko='.$id_sko);
 }
 
 // Input download
@@ -57,7 +59,7 @@ elseif ($modul=='guru-masuk-kelas' AND $act=='input'){
   else{
     mysql_query("INSERT INTO `materi`(`id_materi`,`judul_materi`,`deskripsi`,`id_sko`) 
                               VALUES(NULL,'$_POST[judul_materi]','$_POST[deskripsi]','$_POST[id_sko]')");
-  header('location:../../index.php?modul='.$modul);
+  header('location:../../index.php?modul='.$modul.'&nip='.$_POST['nip'].'&id_sko='.$_POST['id_sko']);
   }
 }
 

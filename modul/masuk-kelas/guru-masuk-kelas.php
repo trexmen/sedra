@@ -90,7 +90,7 @@ switch($_GET['act'])
 
 ";
 		//Query Menampilkan Materi Sesuai Kelas yang diikuti
-	    $tampil = mysql_query("SELECT sko.`nama_kelas`,mp.`nama_mp`,g.`nama`,m.`judul_materi`,m.`deskripsi`,m.`file`,m.`date_created`
+	    $tampil = mysql_query("SELECT m.`id_materi`,sko.`nama_kelas`,mp.`nama_mp`,g.`nama`,m.`judul_materi`,m.`deskripsi`,m.`file`,m.`date_created`
 								FROM `materi` m JOIN `sesi_kelas_online` sko USING(id_sko)
 									      JOIN `guru` g USING(nip)
 									      JOIN `mata_pelajaran` mp USING(id_mp)
@@ -105,6 +105,7 @@ switch($_GET['act'])
 	      	echo "
 		<div class='list_box'>
 			<div class='materi_title_box'>
+				<a class='tools' href='modul/materi/aksi-materi.php?act=hapus&id=$r[id_materi]&modul=$_GET[modul]&nip=$_GET[nip]&id_sko=$_GET[id_sko]' >Hapus Materi</a>
 				<a class='tools' href='file_materi/".$r['file']."' target='*' title='".$r['file']."'>Download File ( ".$ukuran_file." )</a>".$r['judul_materi']."&nbsp;
 			</div>
 			<div style='padding:15px;background:#e5e5e5'>

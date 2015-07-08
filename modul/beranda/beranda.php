@@ -331,7 +331,7 @@ get_status_data(true);
 	    	$materi = mysql_query("SELECT g.`nama`,COUNT(m.`id_materi`) AS 'jumlah_materi'
 									FROM `guru` g LEFT JOIN `sesi_kelas_online` sko USING(nip)
 										      JOIN materi m USING(id_sko)
-									WHERE g.`nip`='".$r['nip']."'
+									WHERE g.`nip`='".$r['nip']."' AND sko.`id_sko`='".$r['id_sko']."'
 									GROUP BY g.`nip` ORDER BY g.`nama` ASC");
 	    	$m=mysql_fetch_array($materi);
 	    	$jumlah_materi = ($m['jumlah_materi']!="")? $m['jumlah_materi'] : 0;
@@ -340,10 +340,19 @@ get_status_data(true);
 	    	$siswa = mysql_query("SELECT g.`nama`,COUNT(k.`id_kelas`) AS 'jumlah_siswa'
 									FROM `guru` g LEFT JOIN `sesi_kelas_online` sko USING(nip)
 										      JOIN kelas k USING(id_sko)
-									WHERE g.`nip`='".$r['nip']."'
+									WHERE g.`nip`='".$r['nip']."' AND sko.`id_sko`='".$r['id_sko']."'
 									GROUP BY g.`nip` ORDER BY g.`nama` ASC");
 	    	$s=mysql_fetch_array($siswa);
 	    	$jumlah_siswa = ($s['jumlah_siswa']!="")? $s['jumlah_siswa'] : 0;
+
+	    	/*Query Menampilkan Pengumuman Sesuai Kelas yang diajarkan*/
+		    $tampilPengumuman = mysql_query("SELECT pk.`id_pengumuman`,pk.`judul`,pk.`deskripsi`,pk.`id_sko`,pk.`date_created`,g.`nip`,g.`nama`,g.`foto`,sko.`nama_kelas`
+									FROM `pengumuman_kelas` pk JOIN `sesi_kelas_online` sko USING(id_sko)
+												   JOIN `guru` g USING(nip)
+									WHERE g.`nip`='".$r['nip']."' AND pk.`id_sko`='".$r['id_sko']."'
+									GROUP BY pk.`id_pengumuman`
+									ORDER BY pk.`date_created` DESC");
+		    $np=mysql_num_rows($tampilPengumuman);
 
 	      	echo "
 
@@ -379,7 +388,7 @@ get_status_data(true);
 					</td>
 					<td width='30%'>Jumlah Pengumuman :</td>
 					<td width='20%' style='text-align:right;background:#ffffff'>
-						<b style='color:#006600'>0</b>
+						<b style='color:#006600'>".$np."</b>
 					</td>
 				</tr>
 				</tbody>

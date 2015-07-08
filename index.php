@@ -79,6 +79,14 @@ $level = $_SESSION['level'];
 <link href="js/slider/generic.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+<?php
+ if($_GET['reg']=='gsuccess'){
+ 	echo "<script>alert('Data Anda berhasil di daftarkan dan menunggu persetujuan dari admin');</script>";
+ }
+ elseif($_GET['reg']=='ssuccess'){
+ 	echo "<script>alert('Data Anda berhasil di daftarkan');</script>";
+ }
+?>
 
 <div id='main_root'>
 	<div id='main_kuliahonline'>

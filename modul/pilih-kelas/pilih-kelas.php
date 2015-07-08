@@ -7,7 +7,8 @@ switch($_GET['act'])
 
 					<div style='width:765px;padding-bottom:5px;'>
 						<div class='header_box'>
-							<a class='tools' href='?modul=pilih-kelas'>Semua Kelas</a><a class='tools' href='?modul=kelas-baru'>Kembali ke List Dosen</a>
+							<!--<a class='tools' href='?modul=pilih-kelas'>Semua Kelas</a>-->
+							<a class='tools' href='?modul=kelas-baru'>Kembali ke List Guru</a>
 							<a class='tools' href='?modul=beranda'>Kembali ke Beranda</a>
 							<h2>Ambil Kelas Baru</h2>
 						</div>

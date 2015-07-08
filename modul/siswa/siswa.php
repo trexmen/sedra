@@ -179,13 +179,6 @@ echo"
 			</tr>
 			<tr>
 				<td>
-					<b>Jurusan</b>
-				</td>
-				<td>:</td>
-				<td>".$r['jurusan']."</td>
-			</tr>
-			<tr>
-				<td>
 					<b>Kelas</b>
 				</td>
 				<td>:</td>
